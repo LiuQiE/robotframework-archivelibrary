@@ -39,10 +39,9 @@ class Unzip(Archive):
                 if name.startswith('/'):
                     name_strip = name.lstrip('/')
                     outfile = open(os.path.join(dest, name_strip), 'wb')
-                    outfile.write(zf.read(name))
                 else:
                     outfile = open(os.path.join(dest, name), 'wb')
-                    outfile.write(zf.read(name))
+                outfile.write(zf.read(name))
                 outfile.flush()
                 outfile.close()
 
